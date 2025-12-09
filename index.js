@@ -5,8 +5,6 @@ const app = express();
 const path = require('path');
 const bodyParser = require('body-parser');
 
-
-
 const port = process.env.PORT || 8888;
 // const connectionString = process.env.CONNECTION || "mongodb://localhost:27017/cloudebase"
 const connectionString = process.env.CONNECTION ||  "mongodb+srv://vaibhavsenta999:NoEhlBKXN7U8317H@senta.xuitg.mongodb.net/?retryWrites=true&w=majority&appName=Senta"
@@ -98,6 +96,13 @@ mongoose.connect(connectionString)
 
 // Middlewares
 app.use(cookieParser())
+
+// Vercel Speed Insights - Make the package available to views for client-side initialization
+app.use((req, res, next) => {
+    // Pass Speed Insights initialization to templates
+    res.locals.vercelSpeedInsights = true;
+    next();
+});
 
 // app.use(express.urlencoded({extended: false}))
 app.use(express.urlencoded({extended: false}))
