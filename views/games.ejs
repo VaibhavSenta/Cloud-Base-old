@@ -391,6 +391,22 @@
 
         
     </style>
+    <!-- Vercel Speed Insights -->
+    <% if (vercelSpeedInsights) { %>
+    <!-- Vercel Speed Insights -->
+    <script>
+    (function() {
+        // Initialize Vercel Speed Insights for page performance monitoring
+        // This script runs on the client side only
+        import('@vercel/speed-insights').then(({ injectSpeedInsights }) => {
+            injectSpeedInsights();
+        }).catch(err => {
+            // Speed Insights failed to load - this is non-critical
+            console.debug('Speed Insights initialization failed:', err);
+        });
+    })();
+    </script>
+    <% } %>
 </head>
 <body>
     
