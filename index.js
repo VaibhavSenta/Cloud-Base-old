@@ -6,8 +6,8 @@ const path = require('path');
 const bodyParser = require('body-parser');
 
 const port = process.env.PORT || 8888;
-// const connectionString = process.env.CONNECTION || "mongodb://localhost:27017/cloudebase"
-const connectionString = process.env.CONNECTION ||  "mongodb+srv://vaibhavsenta999:NoEhlBKXN7U8317H@senta.xuitg.mongodb.net/?retryWrites=true&w=majority&appName=Senta"
+const connectionString = process.env.CONNECTION || "mongodb://localhost:27017/cloudbase"
+// const connectionString = process.env.CONNECTION ||  "mongodb+srv://vaibhavsenta999:NoEhlBKXN7U8317H@senta.xuitg.mongodb.net/?retryWrites=true&w=majority&appName=Senta"
 
 
 
